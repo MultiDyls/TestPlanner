@@ -28,7 +28,7 @@ const raceListData = [
                        10,       //Alteration
                        10,       //Enchanting
                         1,       //Destiny
-                        0],		 // Traits
+                        1],		 // Traits
 	 desc: "Argonians are the reptilian denizens of Black Marsh. Years of defending their borders have made them experts in stealth and evasion, and their natural abilities make them equally at home in water and on land. They are resistant to diseases and poisons and enjoy raw meat. Their Histskin allows them to quickly heal their wounds.",
 	 bonus: "Claws: +20 Unarmed Damage. <br>Histskin: +1 Health per second, potions are 10% stronger and last 10% longer. <br> Raw Diet: Can eat raw meat without risk of disease. <br> Resist Poison and Disease: Poisons deal 75% less damage and 75% less likely to contract disease. <br>Strong Stomach: Can eat raw food without food poisoning. <br>Waterbreathing: Can breathe underwater, swim 20% faster and swimming is 75% less exhausting.",
     },
