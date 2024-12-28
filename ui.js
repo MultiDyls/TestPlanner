@@ -734,7 +734,7 @@ function updateCustomSelectOptions(){
   for(let i = 0; i < blessingsList.length; i++){
     blessingsSel.append(`<option value="${blessingsList[i].id}">${blessingsList[i].name}</option>`);
   }
-  blessingsSel.val(curBlessingList.id);
+  blessingsSel.val(curBlessingList.name);
 }
 
 
