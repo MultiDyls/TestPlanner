@@ -721,7 +721,6 @@ function updateCustomSelectOptions(){
   for(let i = 0; i < racesList.length; i++){
     racesSel.append(`<option value="${racesList[i].id}">${racesList[i].name}</option>`);
   }
-  racesSel.val(raceListData.id);
   
   let mechanicsSel = $("#mechanicsSelect");
   mechanicsSel.empty();
