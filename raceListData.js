@@ -3,7 +3,6 @@
 
 const raceListData = [
 	{ 
-	 id: 0;
 	 name: "Argonian", 
      startingHMS: [100,100,100], 
      startingCW: 120, speedBonus: 0,
