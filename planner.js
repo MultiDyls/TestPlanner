@@ -71,10 +71,9 @@ function initCharacterData(){
     characterData.race = 0;
     characterData.hmsIncreases = [0,0,0];
     characterData.skillLevels = [];
-    for(let i = 0; i < 18; i++){
+    for(let i = 0; i < 20; i++){
       characterData.skillLevels.push(raceListData[0].startingSkills[i]);
     }
-	characterData.skillLevels[18] = characterData.level;
     characterData.perksTaken = [];
     for(let i = 0; i < curPerkList.perks.length; i++){
       characterData.perksTaken.push(false);
@@ -93,6 +92,7 @@ function initCharacterData(){
   }
   
   return gotFromURL;
+  characterData.skillLevels[18] = characterData.level;
 }
 
 //Update the table of derived attributes on the left panel.
