@@ -92,7 +92,6 @@ function initCharacterData(){
   }
   
   return gotFromURL;
-  characterData.skillLevels[18] = characterData.level;
 }
 
 //Update the table of derived attributes on the left panel.
@@ -697,6 +696,7 @@ function buildCodeParserV1(buildCode){
 function buildCodeParserV2(buildCode){
   let answer = buildCodeParserV1(buildCode);
   characterData.oghmaChoice = characterData.oghmaChoice >> 4;
+  characterData.skillLevels[18] = characterData.level;
   return answer;
 }
 
