@@ -71,7 +71,7 @@ function initCharacterData(){
     characterData.race = 0;
     characterData.hmsIncreases = [0,0,0];
     characterData.skillLevels = [];
-    for(let i = 0; i < 20; i++){
+    for(let i = 0; i < 18; i++){
       characterData.skillLevels.push(raceListData[0].startingSkills[i]);
     }
 	characterData.skillLevels[18] = characterData.level;
