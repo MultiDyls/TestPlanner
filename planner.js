@@ -74,6 +74,7 @@ function initCharacterData(){
     for(let i = 0; i < 20; i++){
       characterData.skillLevels.push(raceListData[0].startingSkills[i]);
     }
+	characterData.skillLevels[18] = characterData.level;
     characterData.perksTaken = [];
     for(let i = 0; i < curPerkList.perks.length; i++){
       characterData.perksTaken.push(false);
