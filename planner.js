@@ -688,8 +688,7 @@ function buildCodeParserV1(buildCode){
     let offset = 7 - (i % 8);
     let hasPerk = (buildCode.charCodeAt(index) & (1 << offset)) > 0;
     characterData.perksTaken.push(hasPerk);
-	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
-    if(hasPerk && curPerkList.perks[i].skill < 18 && !freePerks.includes(i));
+    if(hasPerk && curPerkList.perks[i].skill < 18 );
 		characterData.spentPerks++;
   }
   
