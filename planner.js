@@ -679,21 +679,21 @@ function buildCodeParserV1(buildCode){
   characterData.race = buildCode.charCodeAt(28);
   characterData.standingStone = buildCode.charCodeAt(29);
   characterData.blessing = buildCode.charCodeAt(30);
-  
   characterData.perksTaken = [];
-  //this method will be kind of inefficient but EHHHHHHH
+  characterData.spentPerks = 0;
+//this method will be kind of inefficient but EHHHHHHH
   for(let i = 0; i < curPerkList.perks.length; i++){
     let index = 31 + Math.floor(i/8);
     let offset = 7 - (i % 8);
     let hasPerk = (buildCode.charCodeAt(index) & (1 << offset)) > 0;
     characterData.perksTaken.push(hasPerk);
-    if(hasPerk && curPerkList.perks[i].skill < 18 );
+	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11];
+    if(hasPerk && curPerkList.perks[i].skill < 18 && !freePerks.includes(i));
 		characterData.spentPerks++;
-  };
-  characterData.spentPerks = characterData.perksTaken.filter(Boolean).length;
+  }
+  
   return true;
 }
-
 //Decode build data made using V2 of the encoder
 function buildCodeParserV2(buildCode){
   let answer = buildCodeParserV1(buildCode);
