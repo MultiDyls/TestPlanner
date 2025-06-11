@@ -122,6 +122,8 @@ function oghmaSelectChange(){
 		$("#skill17Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill18Level.miniSkillTreeLevel").addClass("greenText");
   }
+  console.log(characterData.earnedPerks);
+  console.log(characterData.spentPerks);
   updateSkillLevelsDisplay();  
   updateCharacterLevelAndResults();
   updateAttributeText();
