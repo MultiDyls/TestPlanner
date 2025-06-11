@@ -689,7 +689,6 @@ function buildCodeParserV1(buildCode){
   
   //force recalc of spent perks
   
-  characterData.spentPerks = characterData.perksTaken.filter(Boolean).length;
   for(let i = 0; i < curPerkList.perks.length; i++){
 	let hasPerk = characterHasPerk(i);
 	let skill = curPerkList.perks[i].skill;
