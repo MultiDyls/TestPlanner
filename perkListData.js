@@ -1,5 +1,5 @@
 const perkData = {
-name : "LoreRim v3.0.4",
+name : "LoreRim v4",
 id: 0,
 skillNames : [
   "Smithing",     // 0
@@ -1845,7 +1845,7 @@ perks : [
    //449
   {name : "Lion's Arrow", skill : 5, skillReq : 100,
    xPos : 175/4, yPos : 75/4, preReqs : [-99, -102], nextPerk: -1,
-   description : "Grants the \"Lion's Arrow\" power: use it to store the spell you are dual casting. Shooting a fully drawn bow in combat also releases the stored spell in the direction of the crosshair. Only works with spells that affect other targets."},
+   description : "Grants the 'Lion's Arrow' power: use it to store the spell you are dual casting. Shooting a fully drawn bow in combat also releases the stored spell in the direction of the crosshair. Only works with spells that affect other targets."},
    //450
   {name : "Weapons Master", skill : 2, skillReq: 20,
    xPos : 100/3, yPos : 223/4, preReqs : [25], nextPerk: 451,

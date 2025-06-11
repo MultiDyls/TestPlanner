@@ -98,9 +98,17 @@ function stoneSelectChange(){
 
 function oghmaSelectChange(){
   characterData.oghmaChoice = Number($("#oghmaSelect").val());
-  document.querySelectorAll('div.miniSkillTreeLevel').forEach(div => {
-  div.classList.remove('greenText'); });
-  if (characterData.oghmaChoice == 1){
+  updateSkillLevelsDisplay();
+  oghmaBonus();
+  updateCharacterLevelAndResults();
+  updateAttributeText();
+  updateBuildCodeDisplay();
+}
+
+function oghmaBonus(){
+	document.querySelectorAll('div.miniSkillTreeLevel').forEach(div => {
+	div.classList.remove('greenText'); });
+	if (characterData.oghmaChoice == 1){
 		$("#skill1Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill2Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill3Level.miniSkillTreeLevel").addClass("greenText");
@@ -114,21 +122,14 @@ function oghmaSelectChange(){
 		$("#skill10Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill11Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill12Level.miniSkillTreeLevel").addClass("greenText");
-  }if (characterData.oghmaChoice == 3){
+	}if (characterData.oghmaChoice == 3){
 		$("#skill13Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill14Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill15Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill16Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill17Level.miniSkillTreeLevel").addClass("greenText");
 		$("#skill18Level.miniSkillTreeLevel").addClass("greenText");
-  }
-  console.log(characterData.earnedPerks);
-  console.log(characterData.spentPerks);
-  console.log(characterData.perksTaken);
-  updateSkillLevelsDisplay();  
-  updateCharacterLevelAndResults();
-  updateAttributeText();
-  updateBuildCodeDisplay();
+	}
 }
 
 function attributeInputChange(){
@@ -753,6 +754,7 @@ function updateSkillLevelsDisplay(){
     $("#skill" + i + "Level").html(characterData.skillLevels[i-1]);
   }
   $("#activeSkillLevelInput").val(characterData.skillLevels[activeSkill]);
+  
 }
 
 function updateCustomSelectOptions(){

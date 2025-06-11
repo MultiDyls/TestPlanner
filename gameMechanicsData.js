@@ -1,5 +1,5 @@
 const gameMechanicsData = {
-  name: "4.0.4",
+  name: "LoreRim v4",
   id : 0,
   
   initialPerks: 3,

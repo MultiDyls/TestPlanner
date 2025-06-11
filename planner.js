@@ -706,6 +706,7 @@ function buildCodeParserV1(buildCode){
 function buildCodeParserV2(buildCode){
   let answer = buildCodeParserV1(buildCode);
   characterData.oghmaChoice = characterData.oghmaChoice >> 4;
+  oghmaBonus();
   characterData.skillLevels[18] = characterData.level;
   return answer;
 }
