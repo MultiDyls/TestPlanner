@@ -98,6 +98,31 @@ function stoneSelectChange(){
 
 function oghmaSelectChange(){
   characterData.oghmaChoice = Number($("#oghmaSelect").val());
+  document.querySelectorAll('div.miniSkillTreeLevel').forEach(div => {
+  div.classList.remove('greenText'); });
+  if (characterData.oghmaChoice == 1){
+		$("#skill1Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill2Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill3Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill4Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill5Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill6Level.miniSkillTreeLevel").addClass("greenText");
+	}if (characterData.oghmaChoice == 2){
+		$("#skill7Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill8Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill9Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill10Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill11Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill12Level.miniSkillTreeLevel").addClass("greenText");
+  }if (characterData.oghmaChoice == 3){
+		$("#skill13Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill14Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill15Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill16Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill17Level.miniSkillTreeLevel").addClass("greenText");
+		$("#skill18Level.miniSkillTreeLevel").addClass("greenText");
+  }
+  updateSkillLevelsDisplay();  
   updateCharacterLevelAndResults();
   updateAttributeText();
   updateBuildCodeDisplay();
@@ -726,7 +751,6 @@ function updateSkillLevelsDisplay(){
   }
   $("#activeSkillLevelInput").val(characterData.skillLevels[activeSkill]);
 }
-
 
 function updateCustomSelectOptions(){
   

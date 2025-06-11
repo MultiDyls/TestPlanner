@@ -347,7 +347,8 @@ function hasPerkPreReqs(perkNum){
 function actuallyTakePerk(perkNum){
 	characterData.perksTaken[perkNum] = true;
 	let skill = curPerkList.perks[perkNum].skill 
-	if (skill < 18){
+	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
+	if (skill < 18 && !freePerks.includes(perkNum)){
   		characterData.spentPerks++;
   }
  updateDerivedAttributes()
@@ -356,9 +357,10 @@ function actuallyTakePerk(perkNum){
 //Remove the perk. Assumes that the perk has actually been taken.
 function actuallyRemovePerk(perkNum){
   characterData.perksTaken[perkNum] = false;
-  let skill = curPerkList.perks[perkNum].skill 
-  if (skill < 18){
-  characterData.spentPerks--;
+	let skill = curPerkList.perks[perkNum].skill 
+	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
+	if (skill < 18 && !freePerks.includes(perkNum)){
+		characterData.spentPerks--;
 	}
  updateDerivedAttributes()
 }
@@ -552,7 +554,7 @@ function calcLevel(){
   
 //Calculate how much character XP has been earned based on skill levels
 function calcTotalXP(){
-let answer = 0;
+let answer = -60;
 for(let i = 0; i < 18; i++){
 	let baseSkill = raceListData[characterData.race].startingSkills[i];
 	let currentSkill = characterData.skillLevels[i];
@@ -560,11 +562,11 @@ for(let i = 0; i < 18; i++){
 	if (currentSkill <= 25) {
 		n = currentSkill - baseSkill;
 	} else if (currentSkill <= 50) {
-		n = 25 + (currentSkill - 25) * 2 - baseSkill;
+		n = 25 + ((currentSkill - 25) * 2) - baseSkill;
 	} else if (currentSkill <= 75) {
-		n = 75 + (currentSkill - 50) * 3 - baseSkill; 
+		n = 75 + ((currentSkill - 50) * 3)  - baseSkill; 
 	} else if (currentSkill <= 100) {
-		n = 150 + (currentSkill - 75) * 6 - baseSkill;
+		n = 150 + ((currentSkill - 75) * 6) - baseSkill;
 	}
     answer += (n);
   }
@@ -686,7 +688,9 @@ function buildCodeParserV1(buildCode){
     let offset = 7 - (i % 8);
     let hasPerk = (buildCode.charCodeAt(index) & (1 << offset)) > 0;
     characterData.perksTaken.push(hasPerk);
-    if(hasPerk && curPerkList.perks[i].skill < 18) characterData.spentPerks++;
+	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
+    if(hasPerk && curPerkList.perks[i].skill < 18 && !freePerks.includes(i));
+		characterData.spentPerks++;
   }
   
   return true;
