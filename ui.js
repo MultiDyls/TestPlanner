@@ -124,6 +124,7 @@ function oghmaSelectChange(){
   }
   console.log(characterData.earnedPerks);
   console.log(characterData.spentPerks);
+  console.log(characterData.perksTaken);
   updateSkillLevelsDisplay();  
   updateCharacterLevelAndResults();
   updateAttributeText();
