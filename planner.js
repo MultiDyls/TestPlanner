@@ -347,8 +347,7 @@ function hasPerkPreReqs(perkNum){
 //Take the perk. Assumes that all the prerequisites are satisfied.
 function actuallyTakePerk(perkNum){
 	characterData.perksTaken[perkNum] = true;
-	let skill = curPerkList.perks[perkNum].skill 
-	if (skill < 18 && !freePerks.includes(perkNum)){
+	if (curPerkList.perks[perkNum].skill < 18 && !freePerks.includes(perkNum)){
   		characterData.spentPerks++;
   }
  updateDerivedAttributes()
@@ -357,8 +356,7 @@ function actuallyTakePerk(perkNum){
 //Remove the perk. Assumes that the perk has actually been taken.
 function actuallyRemovePerk(perkNum){
   characterData.perksTaken[perkNum] = false;
-	let skill = curPerkList.perks[perkNum].skill 
-	if (skill < 18 && !freePerks.includes(perkNum)){
+	if (curPerkList.perks[perkNum].skill < 18 && !freePerks.includes(perkNum)){
 		characterData.spentPerks--;
 	}
  updateDerivedAttributes()
@@ -698,7 +696,9 @@ function buildCodeParserV1(buildCode){
 	if (hasPerk){
 		if (freePerks.includes(i) || skill > 17){
 			characterData.spentPerks--;
-			}
+		} else {
+			characterData.spentPerks++;
+			};
 		}	 
    }
   return true;
