@@ -689,8 +689,8 @@ function buildCodeParserV1(buildCode){
     characterData.perksTaken.push(hasPerk);
     if(hasPerk && curPerkList.perks[i].skill < 18 );
 		characterData.spentPerks++;
-  }
-  
+  };
+  characterData.spentPerks = characterData.perksTaken.filter(Boolean).length;
   return true;
 }
 
