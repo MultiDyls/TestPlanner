@@ -347,8 +347,7 @@ function hasPerkPreReqs(perkNum){
 function actuallyTakePerk(perkNum){
 	characterData.perksTaken[perkNum] = true;
 	let skill = curPerkList.perks[perkNum].skill 
-	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
-	if (skill < 18 && !freePerks.includes(perkNum)){
+	if (skill < 18){
   		characterData.spentPerks++;
   }
  updateDerivedAttributes()
