@@ -11,6 +11,7 @@ var curBlessingList;
 var activeSkill = 0;
 var tookPerkWithLastClick = false;
 var copiedMessageTimeoutID = -1;
+var freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
 
 var characterData = {
   race: 0, //This is an index into the race data array
@@ -347,7 +348,7 @@ function hasPerkPreReqs(perkNum){
 function actuallyTakePerk(perkNum){
 	characterData.perksTaken[perkNum] = true;
 	let skill = curPerkList.perks[perkNum].skill 
-	if (skill < 18){
+	if (skill < 18 && !freePerks.includes(perkNum)){
   		characterData.spentPerks++;
   }
  updateDerivedAttributes()
@@ -357,7 +358,6 @@ function actuallyTakePerk(perkNum){
 function actuallyRemovePerk(perkNum){
   characterData.perksTaken[perkNum] = false;
 	let skill = curPerkList.perks[perkNum].skill 
-	let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11]
 	if (skill < 18 && !freePerks.includes(perkNum)){
 		characterData.spentPerks--;
 	}
@@ -694,7 +694,6 @@ function buildCodeParserV1(buildCode){
   characterData.spentPerks = characterData.perksTaken.filter(Boolean).length;
   for(let i = 0; i < curPerkList.perks.length; i++){
 	let hasPerk = characterHasPerk(i);
-    let freePerks = [418, 2, 4, 5, 6, 7, 8, 9, 10 ,11];
 	let skill = curPerkList.perks[i].skill;
 	if (hasPerk){
 		if (freePerks.includes(i) || skill > 17){
